@@ -26,7 +26,7 @@ class NonIndex implements IndexAndSearchText.Index {
         List<String> foundDocs = new ArrayList<>();
 
         for (String s : index) {
-            if (s.contains(toFind))
+            if (matcher(toFind, s))
                 foundDocs.add(s);
         }
 
@@ -37,5 +37,9 @@ class NonIndex implements IndexAndSearchText.Index {
         }
 */
         return foundDocs;
+    }
+
+    protected boolean matcher(String toFind, String s) {
+        return s.contains(toFind);
     }
 }

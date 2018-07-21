@@ -7,14 +7,16 @@ public class IndexAndSearchText {
         int lines = 20_000;
 
         Index luceneIndex = initIndex(lines, new LuceneIndex(), "Lucene");
-        Index hashMapIndex = initIndex(lines, new HashMapIndex(), "Lucene");
-        Index nonIndex = initIndex(lines, new NonIndex(), "Lucene");
+        Index hashMapIndex = initIndex(lines, new HashMapIndex(), "HashMap word");
+        Index nonIndex = initIndex(lines, new NonIndex(), "Full scan");
+        Index regexNonIndex = initIndex(lines, new RegexNonIndex(), "RegEx");
         System.out.println();
 
         for (int i = 0; i < 10; i++) {
             runIndex(luceneIndex, "Lucene");
-            runIndex(hashMapIndex, "HashMap");
+            runIndex(hashMapIndex, "HashMap word");
             runIndex(nonIndex, "Full scan");
+            runIndex(regexNonIndex, "Regex");
             System.out.println();
         }
     }
@@ -30,7 +32,7 @@ public class IndexAndSearchText {
     }
 
     private static void runIndex(Index index, String name) throws Exception {
-        StopWatch find = new StopWatch(name + " lookup word");
+        StopWatch find = new StopWatch(name + " search");
         index.findInText("hyena");
         find.split();
     }
