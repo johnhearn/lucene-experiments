@@ -1,7 +1,6 @@
-import org.apache.lucene.queryparser.classic.ParseException;
+package johnhearn;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

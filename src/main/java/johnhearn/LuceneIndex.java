@@ -1,3 +1,5 @@
+package johnhearn;
+
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
@@ -18,7 +20,7 @@ import org.apache.lucene.store.RAMDirectory;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-class LuceneIndex implements IndexAndSearchText.Index {
+public class LuceneIndex implements IndexAndSearchText.Index {
 
     private Directory index = new RAMDirectory();
     private IndexSearcher searcher;

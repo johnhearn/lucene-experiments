@@ -1,3 +1,5 @@
+package johnhearn;
+
 public class RegexNonIndex extends NonIndex {
     @Override
     protected boolean matcher(String toFind, String s) {

@@ -1,3 +1,5 @@
+package johnhearn;
+
 import org.apache.lucene.queryparser.classic.ParseException;
 
 import java.io.BufferedReader;

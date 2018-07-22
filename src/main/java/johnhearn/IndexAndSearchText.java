@@ -1,3 +1,5 @@
+package johnhearn;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 
@@ -21,7 +23,7 @@ public class IndexAndSearchText {
         }
     }
 
-    private static Index initIndex(int lines, Index index, String name) throws Exception {
+    static Index initIndex(int lines, Index index, String name) throws Exception {
         BufferedReader reader = new BufferedReader(new FileReader("moby dick.txt"));
 
         StopWatch indexing = new StopWatch(name + " create index");
@@ -31,7 +33,7 @@ public class IndexAndSearchText {
         return index;
     }
 
-    private static void runIndex(Index index, String name) throws Exception {
+    static void runIndex(Index index, String name) throws Exception {
         StopWatch find = new StopWatch(name + " search");
         index.findInText("hyena");
         find.split();
